@@ -10,7 +10,6 @@ import sys
 class Schedule:
     
     logging.basicConfig(stream=sys.stdout, level="DEBUG")
-    _queueList = []
     _api_url = None
     _api_endpoint = None
 
@@ -22,20 +21,19 @@ class Schedule:
         'Content-Type': 'application/json; charset=utf-8'
     }
 
-    def __init__(self, api_url, api_endpoint, queueList):
+    def __init__(self, api_url, api_endpoint):
         try:
             self._api_url = str(api_url)
             self._api_endpoint = str(api_endpoint)
-            self._queueList = queueList
 
         except TypeError as err:
             print("Wrong parameter type", err)
         
-    def getScheduleFull(self):
+    def getScheduleFull(self, queueList):
         
         fullSchedule = []
         try:
-            for queue in self._queueList:
+            for queue in queueList:
                 data = {
                     "queue": queue
                 }
@@ -60,3 +58,31 @@ class Schedule:
         except Exception as err:
             print(err.with_traceback)
         return fullSchedule
+    
+    def getScheduleByQueue(self, queue):
+        
+        queueSchedule = []
+        try:
+            data = {
+                "queue": queue
+            }
+            logging.info(data)
+
+            response = requests.post(
+                self._api_url + self._api_endpoint,
+                json=data,
+                headers=self._headers,
+                timeout=self._HTTP_TIMEOUT
+            )
+
+            if response.json():
+                response_body = response.json()
+                if response.status_code < 300:
+                    queueSchedule.append(response_body)
+                    logging.info(str(response))
+                else:
+                    logging.warning(response_body)
+                    raise Exception('Wrong queue name: ' + str(response.status_code) + " " + str(response.content))
+        except Exception as err:
+            print(err.with_traceback)
+        return queueSchedule
