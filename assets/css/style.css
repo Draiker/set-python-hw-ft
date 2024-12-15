@@ -1,0 +1,27 @@
+body {
+    color: #FFFFFF;
+    background-color: #404040;
+}
+.queue {
+    width: 34px;
+    margin: 0, 8px;
+    background-color: #4A4A4A;
+}
+.queue1 {
+    background-color: #FF7C7F;
+}
+.queue2 {
+    background-color: #FCFF8C;
+}
+.queue3 {
+    background-color: #6AFC8D;
+}
+.queue4 {
+    background-color: #75FDFB;
+}
+.queue5 {
+    background-color: #847CF6;
+}
+.queue6 {
+    background-color: #E877FD;
+}

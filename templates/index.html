@@ -2,8 +2,105 @@
 <html>
    <head>
      <title>My Flask App</title>
+     <style type="text/css" src="/assets/css/style.css"></style>
    </head>
    <body>
-     <code>{{ message }}</code>
+    <div>
+      <header>
+        <h1>Графік подачі світла</h1>
+        <h2>{{ scheduleDate }}</h2>
+      </header>
+      <content>
+        <colgroup>
+          <div class="hours-left"></div>
+          <div class="queue queue1">
+            <div class="queue-number queue-1-1"></div>
+            <div class="queue-body queue-1-1">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue1">
+            <div class="queue-number queue-1-2"></div>
+            <div class="queue-body queue-1-2">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue2">
+            <div class="queue-number queue-2-1"></div>
+            <div class="queue-body queue-2-1">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue2">
+            <div class="queue-number queue-2-2"></div>
+            <div class="queue-body queue-2-2">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue3">
+            <div class="queue-number queue-3-1"></div>
+            <div class="queue-body queue-3-1">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue3">
+            <div class="queue-number queue-3-2"></div>
+            <div class="queue-body queue-3-2">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue4">
+            <div class="queue-number queue-4-1"></div>
+            <div class="queue-body queue-4-1">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue4">
+            <div class="queue-number queue-4-2"></div>
+            <div class="queue-body queue-4-2">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue5">
+            <div class="queue-number queue-5-1"></div>
+            <div class="queue-body queue-5-1">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue5">
+            <div class="queue-number queue-5-2"></div>
+            <div class="queue-body queue-5-2">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue6">
+            <div class="queue-number queue-6-1"></div>
+            <div class="queue-body queue-6-1">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="queue queue6">
+            <div class="queue-number queue-6-2"></div>
+            <div class="queue-body queue-6-2">
+              <div class="electricity-on"></div>
+              <div class="electricity-of"></div>
+            </div>
+          </div>
+          <div class="hours-right"></div>
+        </colgroup>
+      </content>
+    </div>
+    <code>{{ message }}</code>
    </body>
 </html>
